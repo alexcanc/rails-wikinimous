@@ -1,0 +1,9 @@
+<nav>
+  <a href="<%= root_path %>">Wikinimous</a>
+  <a href="<%= new_article_path %>" style="float:right;">New Article</a>
+</nav>
+
+<h1><%= @article.title %> <a href="<%= edit_article_path(@article) %>">✎</a> <%= link_to article_path(@article), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+  🗑️
+<% end %></h1>
+<p><%= @article.content %></p>
